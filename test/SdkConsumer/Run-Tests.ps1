@@ -10,7 +10,8 @@ if ($LASTEXITCODE -eq 0) {
 	$env:NUGET_PACKAGES="$PSScriptRoot/../../obj/sdktest"
 	if (Test-Path $env:NUGET_PACKAGES\Nerdbank.Sdk) { Remove-Item -Recurse $env:NUGET_PACKAGES\Nerdbank.Sdk }
 
-	dotnet build -bl
+	dotnet build -bl:sdkintegrationtest.binlog
+	Write-Host "See '$(Join-Path $pwd sdkintegrationtest.binlog)' for details."
 }
 
 $env:BUILDCONFIGURATION = $oldBuildConfiguration
