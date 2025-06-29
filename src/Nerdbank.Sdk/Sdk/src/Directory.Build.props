@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<!-- Include and reference README in nuget package, if a README is in the project directory. -->
+	<PropertyGroup>
+		<PackageReadmeFile Condition="Exists('README.md')">README.md</PackageReadmeFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Condition="Exists('README.md')" Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+</Project>
