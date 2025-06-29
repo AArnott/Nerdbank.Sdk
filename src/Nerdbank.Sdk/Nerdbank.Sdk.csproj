@@ -6,6 +6,7 @@
 		<IncludeBuildOutput>false</IncludeBuildOutput>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<NoWarn>$(NoWarn);NU5100;NU5128;CS1591</NoWarn>
+		<DefaultExcludesInProjectFolder>$(DefaultExcludesInProjectFolder);Sdk/**</DefaultExcludesInProjectFolder>
 
 		<Description>This MSBuild SDK delivers opinionated defaults and helpful tools for developing .NET projects.</Description>
 		<PackageTags></PackageTags>
