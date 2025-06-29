@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
-	<ItemGroup>
-		<!-- Avoid compile error about missing namespace when combining ImplicitUsings with .NET Framework target frameworks. -->
-		<Using Remove="System.Net.Http" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'" />
-	</ItemGroup>
-
 	<Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
 
 	<UsingTask TaskName="FirstTask" AssemblyFile="$(MSBuildThisFileDirectory)\Nerdbank.Sdk.dll" />
+
+	<Target Name="ValidateNerdbankSdkInvariants">
+		<Error Condition="!Exists('$(RepoRootPath)global.json')" Text="The 'global.json' file is missing from the repository root." />
+	</Target>
 </Project>

@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project>
+<Project InitialTargets="ValidateNerdbankSdkInvariants">
 	<PropertyGroup>
-		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<RepoRootPath>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), 'global.json'))</RepoRootPath>
-
 		<UsingNerdbankSdk>true</UsingNerdbankSdk>
+
+		<RepoRootPath>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), 'global.json'))\</RepoRootPath>
+		<SrcRootPath>$(RepoRootPath)src\</SrcRootPath>
+		<TestRootPath>$(RepoRootPath)test\</TestRootPath>
 	</PropertyGroup>
+
+	<PropertyGroup>
+		<_NerdbankSdkDirectoryBuildPrefix Condition="$(MSBuildProjectDirectory.StartsWith('$(SrcRootPath)'))">src\</_NerdbankSdkDirectoryBuildPrefix>
+		<_NerdbankSdkDirectoryBuildPrefix Condition="$(MSBuildProjectDirectory.StartsWith('$(TestRootPath)'))">test\</_NerdbankSdkDirectoryBuildPrefix>
+
+		<CustomBeforeDirectoryBuildProps>$(CustomBeforeDirectoryBuildProps);$(MSBuildThisFileDirectory)$(_NerdbankSdkDirectoryBuildPrefix)Directory.Build.props</CustomBeforeDirectoryBuildProps>
+		<CustomBeforeDirectoryBuildTargets>$(CustomBeforeDirectoryBuildTargets);$(MSBuildThisFileDirectory)$(_NerdbankSdkDirectoryBuildPrefix)Directory.Build.targets</CustomBeforeDirectoryBuildTargets>
+	</PropertyGroup>
+
 	<Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 </Project>
