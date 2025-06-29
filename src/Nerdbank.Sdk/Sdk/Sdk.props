@@ -4,4 +4,5 @@
 		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
 		<RepoRootPath>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), 'global.json'))</RepoRootPath>
 	</PropertyGroup>
+	<Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 </Project>

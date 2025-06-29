@@ -5,5 +5,7 @@
 		<Using Remove="System.Net.Http" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'" />
 	</ItemGroup>
 
+	<Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+
 	<UsingTask TaskName="FirstTask" AssemblyFile="$(MSBuildThisFileDirectory)\Nerdbank.Sdk.dll" />
 </Project>
