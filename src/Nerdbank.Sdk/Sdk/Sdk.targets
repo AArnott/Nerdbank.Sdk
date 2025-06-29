@@ -4,4 +4,8 @@
 		<!-- Avoid compile error about missing namespace when combining ImplicitUsings with .NET Framework target frameworks. -->
 		<Using Remove="System.Net.Http" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'" />
 	</ItemGroup>
+
+	<Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+
+	<UsingTask TaskName="FirstTask" AssemblyFile="$(MSBuildThisFileDirectory)\Nerdbank.Sdk.dll" />
 </Project>

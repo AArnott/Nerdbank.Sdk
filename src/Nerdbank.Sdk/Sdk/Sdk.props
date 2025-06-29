@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
-	<UsingTask TaskName="FirstTask" AssemblyFile="$(MSBuildThisFileDirectory)\Nerdbank.Sdk.dll" />
 	<PropertyGroup>
 		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
 		<RepoRootPath>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), 'global.json'))</RepoRootPath>
+
+		<UsingNerdbankSdk>true</UsingNerdbankSdk>
 	</PropertyGroup>
+	<Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 </Project>
