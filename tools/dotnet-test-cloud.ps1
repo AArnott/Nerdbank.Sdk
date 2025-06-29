@@ -84,3 +84,6 @@ Get-ChildItem -Recurse -Path $RepoRoot\test\*.trx |% {
     Write-Host "##vso[results.publish type=VSTest;runTitle=$runTitle;publishRunAttachments=true;resultFiles=$_;failTaskOnFailedTests=true;testRunSystem=VSTS - PTR;]"
   }
 }
+
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+& "$PSScriptRoot\..\test\SdkConsumer\Run-Tests.ps1"

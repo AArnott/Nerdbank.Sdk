@@ -1,0 +1,6 @@
+{
+	"msbuild-sdks": {
+		"Microsoft.Build.Traversal": "4.1.82",
+		"Nerdbank.Sdk": "REPLACE-WITH-BUILT-VERSION"
+	}
+}
