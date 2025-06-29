@@ -4,6 +4,6 @@ _layout: landing
 
 # Overview
 
-This is your docfx landing page.
+Welcome to the doc site for the Nerdbank.Sdk: an opinionated MSBuild SDK for your .NET projects.
 
 Click "Docs" across the top to get started.
