@@ -21,4 +21,4 @@ Then in each of your MSBuild project files, replace the first line to use this S
 +<Project Sdk="Nerdbank.Sdk">
 ```
 
-Learn more on [our doc site](http://aarnott.github.io/Nerdbank.Sdk/).
+Learn more on [our doc site](https://aarnott.github.io/Nerdbank.Sdk/).
