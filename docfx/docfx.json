@@ -3,7 +3,7 @@
 		{
 			"src": [
 				{
-					"src": "../src/Library",
+					"src": "../src/Nerdbank.Sdk",
 					"files": [
 						"**/*.csproj"
 					]
@@ -39,8 +39,8 @@
 			"modern"
 		],
 		"globalMetadata": {
-			"_appName": "Library",
-			"_appTitle": "Library",
+			"_appName": "Nerdbank.Sdk",
+			"_appTitle": "Nerdbank.Sdk",
 			"_enableSearch": true,
 			"pdf": false
 		}

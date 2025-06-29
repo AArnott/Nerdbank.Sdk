@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<NoWarn>$(NoWarn);NU5100;NU5128;CS1591</NoWarn>
+
+		<Description>This MSBuild SDK delivers opinionated defaults and helpful tools for developing .NET projects.</Description>
+		<PackageTags></PackageTags>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="$(TargetPath)" Pack="true" PackagePath="Sdk/" />
+		<None Include="Sdk\**" Pack="true" PackagePath="Sdk/" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Build.Utilities.Core" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<ItemGroup>
+		<!-- Avoid compile error about missing namespace when combining ImplicitUsings with .NET Framework target frameworks. -->
+		<Using Remove="System.Net.Http" Condition="'$(TargetFrameworkIdentifier)'=='.NETFramework'" />
+	</ItemGroup>
+	<Target Name="Test">
+		<FirstTask />
+	</Target>
+</Project>

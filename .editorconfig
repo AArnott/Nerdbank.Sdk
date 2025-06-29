@@ -3,9 +3,8 @@
 # top-most EditorConfig file
 root = true
 
-# Don't use tabs for indentation.
 [*]
-indent_style = space
+indent_style = tab
 
 # (Please don't specify an indent_size here; that has too many unintended consequences.)
 
@@ -25,17 +24,16 @@ indent_size = 2
 
 # Xml config files
 [*.{ruleset,config,nuspec,resx,vsixmanifest,vsct,runsettings}]
-indent_size = 2
-indent_style = space
+indent_style = tab
 
 # JSON files
 [*.json]
+indent_style = tab
 indent_size = 2
-indent_style = space
 
 [*.ps1]
-indent_style = space
-indent_size = 4
+indent_style = tab
+indent_size = 2
 
 # Dotnet code style settings:
 [*.{cs,vb}]
